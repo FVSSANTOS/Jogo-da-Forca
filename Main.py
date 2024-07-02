@@ -9,6 +9,82 @@ def limpa_tela():
         _ = system('clear')
 
 
+def display_hangman(chances):
+
+    # Lista de estágios da forca
+    stages = [  # estágio 6 (final)
+                """
+                   --------
+                   |      |
+                   |      O
+                   |     \\|/
+                   |      |
+                   |     / \\
+                   -
+                """,
+                # estágio 5
+                """
+                   --------
+                   |      |
+                   |      O
+                   |     \\|/
+                   |      |
+                   |     / 
+                   -
+                """,
+                # estágio 4
+                """
+                   --------
+                   |      |
+                   |      O
+                   |     \\|/
+                   |      |
+                   |      
+                   -
+                """,
+                # estágio 3
+                """
+                   --------
+                   |      |
+                   |      O
+                   |     \\|
+                   |      |
+                   |     
+                   -
+                """,
+                # estágio 2
+                """
+                   --------
+                   |      |
+                   |      O
+                   |      |
+                   |      |
+                   |     
+                   -
+                """,
+                # estágio 1
+                """
+                   --------
+                   |      |
+                   |      O
+                   |    
+                   |      
+                   |     
+                   -
+                """,
+                # estágio 0
+                """
+                   --------
+                   |      |
+                   |      
+                   |    
+                   |      
+                   |     
+                   -
+                """
+    ]
+    return stages[chances]
+
 def game():
 
     limpa_tela()
@@ -28,8 +104,9 @@ def game():
 
     while chances > 0:
 
+       
+        print(display_hangman(chances))
         print("".join(letras_descobertas))
-        print("\nChances restantes: ",chances)
         print("Letras erradas: ","".join(letras_erradas))
         
         
